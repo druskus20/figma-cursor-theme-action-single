@@ -134,7 +134,8 @@ const got = require('got');
           fs.writeFileSync(svgFilePath, buffer);
         }
 
-        await Promise.all([1, 2, 4].map(async (scale) => {
+        //await Promise.all([1, 2, 4].map(async (scale) => {
+        await Promise.all([1].map(async (scale) => {
           const rawBuffer = await sharp(buffer, { density: 72 * scale })
             .resize(meta.width * scale, meta.height * scale)
             .raw()
